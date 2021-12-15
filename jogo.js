@@ -1,11 +1,11 @@
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 ctx.width = 400;
 ctx.height=225;
 
-var intervalo=10;
-var tempo =0;
-var maxtempo = 10000;
+const intervalo=10;
+let tempo =0;
+let maxtempo = 10000;
 
 function Personagem(imagem, x, y, h, w) {
     this.x=x;
