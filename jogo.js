@@ -20,9 +20,9 @@ function Personagem(imagem, x, y, h, w) {
      * Calcula como desenhar o n-esimo frame de um sprite
      */
     this.desenha = function(n) { 
-        var posX = this.x-fundo.sx;
-        var sx = this.width*n;
-        var sy =0;
+        let posX = this.x-fundo.sx;
+        let sx = this.width*n;
+        let sy =0;
         if (sx>this.img.width-this.width) {
             sy = this.height * Math.floor(sx/this.img.width);
             sx = (sx % this.img.width);
@@ -56,7 +56,7 @@ function Estado(ini,fini, sx, sy, vel, personagem) {
         }
     }
     this.muda = function() {
-        var x = tempo/this.velocidade;
+        let x = tempo/this.velocidade;
         if (x-Math.floor(x)>0) return false;
         else  return true;
         
@@ -78,7 +78,7 @@ var fundo =  new function(){
 }
 
 var heroi =  new function(){
-    var that = this;
+    let that = this;
     this.agente = new Personagem('heroi.png', 400,45, 95,50 );
     this.corrente=0;
     this.estados= new Array();
@@ -114,13 +114,13 @@ var GameLoop = function(){
     if (tempo>maxtempo) tempo=0;
 }
 
-var ESQ=37;
-var BAIXO=40;
-var CIMA=38;
-var DIR=39;
+let ESQ=37;
+let BAIXO=40;
+let CIMA=38;
+let DIR=39;
 
 document.onkeydown = function(e){
-    var keycode;
+    let keycode;
     if (window.event) keycode = window.event.keyCode;
     else if (e) keycode = e.which;
  
